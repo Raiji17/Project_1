@@ -56,13 +56,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             AnojiTheme {
                 Box(modifier = Modifier.fillMaxSize()){
-                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                        LazyColumn(modifier = Modifier.padding(innerPadding)) {
-                            itemDataList().let {
-                                createList(it)
-                            }
+                    Scaffold(
+                            modifier = Modifier.fillMaxSize(),
+                            topBar = { Header("anoji") },
+                            bottomBar = { FooterBar() }) { innerPadding ->
+                        LazyColumn(modifier = Modifier.padding(innerPadding)){
+                                itemDataList().let {
+                                    createList(it)
+                                }
                         }
-                    }
+                        }
                 }
             }
         }
@@ -115,8 +118,9 @@ fun HeaderPreview() {
 
 @Composable
 fun MyButton(modifier: Modifier = Modifier) {
-    Button(modifier = modifier
-        .clip(RoundedCornerShape(20.dp))
+    Button(
+        modifier = modifier
+            .clip(RoundedCornerShape(20.dp))
         .size(80.dp), onClick = { /* Aksi saat tombol ditekan */ }) {
         ImageProfile(imageResId = R.drawable.ic_launcher_foreground)
         Text(text = "Klik Saya")
@@ -177,12 +181,16 @@ fun MyListPreview(){
                     items(items = List(50) { "Item $it" }) {item ->
                         MyListItem(ItemData(name = item, imageResId = R.drawable.ic_launcher_foreground))
                     }
+                    item { MyButton() }
+                    item { MyButton() }
                 }
+
             }
-            MyButton(modifier = Modifier
-                .align(Alignment.BottomEnd)
+            Column(modifier = Modifier.align(Alignment.BottomEnd)
                 .padding(end = 25.dp)
-                .padding(bottom = 70.dp))
+                .padding(bottom = 70.dp)){
+                MyButton()
+            }
         }
     }
 }
