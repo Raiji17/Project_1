@@ -1,6 +1,7 @@
 package com.example.anoji.screen
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,12 +19,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-@Preview(showBackground = true )
+
 @Composable
-fun SignIn(){
+fun SignIn(
+    onSignInClick: () -> Unit
+){
     val username = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
 
@@ -67,12 +69,27 @@ fun SignIn(){
             Text("Sign In")
         }
         Button(
+
             onClick = {
-                // Handle sign-in logic here
+
+                println("Username: ${username.value}, Password: ${password.value}")
             },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         ) {
             Text("Sign Up")
         }
+
+        Spacer(modifier = Modifier.height(50.dp))
+        Box(modifier = Modifier.fillMaxWidth(),contentAlignment = Alignment.BottomCenter){
+            Button(
+                onClick = { },
+                modifier = Modifier
+                    .fillMaxWidth()
+
+            ) {
+                Text("Countinue With Google")
+            }
+        }
+
     }
 }

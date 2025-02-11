@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "349813673547",
+    "project_id": "anojiapp",
+    "storage_bucket": "anojiapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349813673547:android:f225a1cc51ce6d7e72c7ce",
+        "android_client_info": {
+          "package_name": "com.example.anoji"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349813673547-q3i79051v427rsl9mih0t13p13uh5vdu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.anoji",
+            "certificate_hash": "6b8b94d5f2b1ddbd645327a04cdfed17778f8ec8"
+          }
+        },
+        {
+          "client_id": "349813673547-29knv797ivoijtidjbmub0nsfmlh04in.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfajvoZR-ilVa9IVAMAbqAAXbHRId0Fwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349813673547-29knv797ivoijtidjbmub0nsfmlh04in.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
