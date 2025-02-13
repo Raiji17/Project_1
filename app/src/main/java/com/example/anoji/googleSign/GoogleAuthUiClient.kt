@@ -1,5 +1,6 @@
 package com.example.anoji.googleSign
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
@@ -45,6 +46,7 @@ class GoogleAuthUiClient(
         ).setAutoSelectEnabled(true).build()
     }
 
+    @SuppressLint("SuspiciousIndentation")
     suspend fun signInWithIntent(intent: Intent): SignInResult {
         viewModel.resetState()
         val cred = oneTapClient.getSignInCredentialFromIntent(intent)

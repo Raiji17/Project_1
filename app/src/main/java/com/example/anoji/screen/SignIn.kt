@@ -20,12 +20,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.Job
 
 
 @Composable
-fun SignIn(
-    onSignInClick: () -> Unit
-){
+fun SignIn(onSignInClick: () -> Job) {
     val username = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
 
@@ -82,7 +81,9 @@ fun SignIn(
         Spacer(modifier = Modifier.height(50.dp))
         Box(modifier = Modifier.fillMaxWidth(),contentAlignment = Alignment.BottomCenter){
             Button(
-                onClick = { },
+                onClick = {
+                    onSignInClick()
+                },
                 modifier = Modifier
                     .fillMaxWidth()
 
