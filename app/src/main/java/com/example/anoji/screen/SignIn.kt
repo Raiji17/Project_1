@@ -20,8 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.tooling.preview.Preview
 import kotlinx.coroutines.Job
-
 
 @Composable
 fun SignIn(onSignInClick: () -> Job) {
@@ -93,4 +93,10 @@ fun SignIn(onSignInClick: () -> Job) {
         }
 
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SignInPreview() {
+    SignIn(onSignInClick = { Job() })
 }
